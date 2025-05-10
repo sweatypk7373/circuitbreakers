@@ -1,0 +1,44 @@
+[
+    {
+        "id": "media003",
+        "title": "Motor Testing Results",
+        "description": "Photos of motor testing setup with power measurement results",
+        "category": "Testing",
+        "uploaded_by": "Jamal Williams",
+        "upload_date": "2025-04-29T14:09:52.218412",
+        "media_type": "Photo",
+        "tags": [
+            "motor",
+            "testing",
+            "results"
+        ]
+    },
+    {
+        "id": "media002",
+        "title": "Chassis Assembly Timelapse",
+        "description": "Timelapse video showing the full chassis assembly process",
+        "category": "Build Process",
+        "uploaded_by": "David Kim",
+        "upload_date": "2025-04-16T14:09:52.218408",
+        "media_type": "Video",
+        "tags": [
+            "chassis",
+            "assembly",
+            "build"
+        ]
+    },
+    {
+        "id": "media001",
+        "title": "Team Photo at Regional Competition",
+        "description": "Full team photo after winning 2nd place at regional competition",
+        "category": "Team Photos",
+        "uploaded_by": "Sarah Chen",
+        "upload_date": "2025-03-22T14:09:52.218404",
+        "media_type": "Photo",
+        "tags": [
+            "competition",
+            "team",
+            "awards"
+        ]
+    }
+]

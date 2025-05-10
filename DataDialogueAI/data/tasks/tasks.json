@@ -1,0 +1,50 @@
+[
+    {
+        "id": "task001",
+        "title": "Design drivetrain mounting brackets",
+        "description": "Create CAD files for custom drivetrain mounting brackets",
+        "status": "In Progress",
+        "priority": "High",
+        "assigned_to": "Alex Johnson",
+        "created_by": "Admin User",
+        "created_at": "2025-05-01T14:09:52.218341",
+        "due_date": "2025-05-09T14:09:52.218354",
+        "category": "Engineering"
+    },
+    {
+        "id": "task002",
+        "title": "Update sponsor page on website",
+        "description": "Add new sponsors and update existing sponsor information",
+        "status": "To Do",
+        "priority": "Medium",
+        "assigned_to": "Maria Garcia",
+        "created_by": "Admin User",
+        "created_at": "2025-05-04T14:09:52.218358",
+        "due_date": "2025-05-11T14:09:52.218360",
+        "category": "Outreach"
+    },
+    {
+        "id": "task003",
+        "title": "Test electrical system",
+        "description": "Complete full electrical system testing and document results",
+        "status": "Completed",
+        "priority": "Critical",
+        "assigned_to": "Jamal Williams",
+        "created_by": "Admin User",
+        "created_at": "2025-04-26T14:09:52.218363",
+        "due_date": "2025-05-05T14:09:52.218364",
+        "category": "Engineering"
+    },
+    {
+        "id": "task004",
+        "title": "Order safety equipment",
+        "description": "Order new safety gloves, glasses, and fire extinguishers",
+        "status": "In Progress",
+        "priority": "High",
+        "assigned_to": "Sarah Chen",
+        "created_by": "Admin User",
+        "created_at": "2025-05-03T14:09:52.218366",
+        "due_date": "2025-05-07T14:09:52.218367",
+        "category": "Logistics"
+    }
+]

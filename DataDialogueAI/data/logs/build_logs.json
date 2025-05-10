@@ -1,0 +1,29 @@
+[
+    {
+        "id": "log001",
+        "date": "2025-05-05T14:09:52.218369",
+        "title": "Drivetrain Assembly Progress",
+        "description": "Completed 75% of drivetrain assembly. Need additional bolts and washers for mounting.",
+        "author": "Alex Johnson",
+        "category": "Engineering",
+        "image_description": "Drivetrain assembly with motor mounts"
+    },
+    {
+        "id": "log002",
+        "date": "2025-05-03T14:09:52.218371",
+        "title": "Electrical Wiring Completed",
+        "description": "Finished main electrical wiring harness. All connections tested and working.",
+        "author": "Jamal Williams",
+        "category": "Electrical",
+        "image_description": "Electrical wiring harness with battery connections"
+    },
+    {
+        "id": "log003",
+        "date": "2025-05-01T14:09:52.218373",
+        "title": "Sponsor Meeting Notes",
+        "description": "Met with potential new sponsors. Tech Innovations expressed interest in gold-level sponsorship.",
+        "author": "Maria Garcia",
+        "category": "Outreach",
+        "image_description": "Team members meeting with sponsor representatives"
+    }
+]
