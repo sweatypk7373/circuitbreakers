@@ -1,0 +1,38 @@
+[
+    {
+        "id": "msg001",
+        "title": "Parts Delivery Update",
+        "content": "The new suspension components have arrived. Engineering team members, please check with the faculty advisor to coordinate assembly time.",
+        "author": "Admin User",
+        "timestamp": "2025-05-05T14:09:52.218467",
+        "category": "Announcement",
+        "priority": "Normal"
+    },
+    {
+        "id": "msg002",
+        "title": "Documentation Reminder",
+        "content": "All team members should update their work logs by Friday. Media team needs photos of the latest build progress.",
+        "author": "Admin User",
+        "timestamp": "2025-05-03T14:09:52.218470",
+        "category": "Announcement",
+        "priority": "High"
+    },
+    {
+        "id": "msg003",
+        "title": "Question about wiring diagram",
+        "content": "Can someone clarify the connection between the motor controller and the power distribution board? The diagram on page 5 seems to conflict with the written instructions.",
+        "author": "Jamal Williams",
+        "timestamp": "2025-05-04T14:09:52.218473",
+        "category": "Question",
+        "priority": "Normal"
+    },
+    {
+        "id": "msg004",
+        "content": "I've uploaded the revised wiring diagram to the resources section. The previous version had an error on pin connections.",
+        "author": "Sarah Chen",
+        "timestamp": "2025-05-04T12:09:52.218476",
+        "category": "Response",
+        "priority": "Normal",
+        "parent_id": "msg003"
+    }
+]

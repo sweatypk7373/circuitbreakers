@@ -1,0 +1,105 @@
+That's a great initiative! Here's a **detailed prompt** you can use to guide development or communicate with designers/developers:
+
+---
+
+### 🔧 App Development Prompt for STEM Racing Team: Circuit Breakers
+
+**Project Name:** Circuit Breakers Team App
+**Purpose:** To serve as a centralized hub for internal team communication, project management, data logging, and outreach related to the Circuit Breakers STEM racing team.
+
+---
+
+### 🎯 Objective:
+
+Design and build a mobile app (iOS and Android) or a web-based application to streamline operations for the Circuit Breakers team, enhance team collaboration, and increase visibility for sponsors and supporters.
+
+---
+
+### 📲 Key Features:
+
+#### 1. **Dashboard**
+
+* Overview of team status (build progress, upcoming events, meeting countdown)
+* Quick links to recent updates and important documents
+
+#### 2. **Team Calendar**
+
+* Shared calendar for meetings, competitions, deadlines, and events
+* Sync with Google Calendar or iCloud
+
+#### 3. **Project Management Tools**
+
+* Task assignment and progress tracking (Kanban-style board or to-do lists)
+* Role-based access (e.g., engineers, designers, media team)
+
+#### 4. **Build Logbook**
+
+* Daily/weekly logs for build updates with photos and notes
+* Ability to tag teammates and add timestamped entries
+
+#### 5. **Resources and Documents**
+
+* Upload and view files: blueprints, safety checklists, competition rules, etc.
+* Organized by folders (Design, Engineering, Outreach, etc.)
+
+#### 6. **Team Communication**
+
+* Group chat or forum for team discussions
+* Announcements section for leads to post updates
+
+#### 7. **Media Gallery**
+
+* Archive of team photos and videos
+* Exportable for social media posts and outreach
+
+#### 8. **Sponsor/Outreach Section**
+
+* Sponsor profiles with logos and links
+* Outreach tracker for school visits, demos, etc.
+* Printable media kits and thank-you letters
+
+#### 9. **Profile & Roles**
+
+* Individual profiles with contact info, position, and skills
+* Badge system or points for task completion and achievements
+
+#### 10. **Admin Panel**
+
+* Controlled by team leads to manage user permissions, app settings, and push notifications
+
+---
+
+### 🔐 Security & Access:
+
+* Secure login with email/password or school credentials
+* Optional 2FA for admins
+* Data encryption for sensitive files
+
+---
+
+### 🎨 Design Preferences:
+
+* Color theme: Black, Electric Blue, Silver (aligned with your branding)
+* Logo integration (Circuit Breakers team logo)
+* Clean, minimal interface with focus on usability for students
+
+---
+
+### 📦 Tech Stack (Suggested):
+
+* **Frontend:** React Native or Flutter (for cross-platform apps)
+* **Backend:** Firebase or Node.js with MongoDB
+* **Hosting:** Vercel or Netlify for web, App Store/Play Store for mobile
+* **Integrations:** Google Drive, Discord/Slack, Trello (optional)
+
+---
+
+### 📌 Future Features (Optional Add-ons):
+
+* Competition scoring tracker
+* Augmented reality (AR) garage tour
+* Live telemetry (if applicable for your racing hardware)
+
+---
+
+Would you like me to generate a mockup or wireframe for the app interface?
