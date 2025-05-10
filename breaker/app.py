@@ -1,18 +1,72 @@
 import streamlit as st
 import pandas as pd
 import os
-import auth
-from util import load_svg
-from database import create_tables, migrate_data_from_json
-import config  # Import the new configuration file
+import sys
 
-# Set page configuration
+# Set page configuration - THIS MUST BE THE FIRST STREAMLIT COMMAND
 st.set_page_config(
     page_title="Circuit Breakers Team Hub",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Ensure assets directory exists
+os.makedirs("assets", exist_ok=True)
+
+# Check if logo file exists, if not create a default one
+if not os.path.exists("assets/logo.svg"):
+    # Create a default logo SVG file
+    default_logo = """<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="90" fill="#f1f1f1" stroke="#0084D8" stroke-width="5"/>
+        <text x="100" y="90" font-family="Arial" font-size="18" fill="#0084D8" text-anchor="middle">CIRCUIT</text>
+        <text x="100" y="115" font-family="Arial" font-size="18" fill="#0084D8" text-anchor="middle">BREAKERS</text>
+        <path d="M80,130 L95,150 L110,130 L125,150" stroke="#C0C0C0" stroke-width="4" fill="none"/>
+        <path d="M60,120 L140,120" stroke="#0084D8" stroke-width="3" fill="none"/>
+        <path d="M70,60 L130,60" stroke="#0084D8" stroke-width="3" fill="none"/>
+        <path d="M90,60 L90,120" stroke="#0084D8" stroke-width="3" fill="none"/>
+        <path d="M110,60 L110,120" stroke="#0084D8" stroke-width="3" fill="none"/>
+    </svg>"""
+    
+    with open("assets/logo.svg", "w") as f:
+        f.write(default_logo)
+
+# Import auth (after creating assets)
+import auth
+from database import create_tables, migrate_data_from_json
+import config  # Import the new configuration file
+
+# Utility function to load SVG
+def load_svg(svg_path):
+    """Load an SVG file or return a default SVG if the file doesn't exist."""
+    try:
+        if os.path.exists(svg_path):
+            with open(svg_path, 'r') as f:
+                return f.read()
+        else:
+            # Return a default SVG logo if the file doesn't exist
+            return """<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="90" fill="#f1f1f1" stroke="#0084D8" stroke-width="5"/>
+                <text x="100" y="90" font-family="Arial" font-size="18" fill="#0084D8" text-anchor="middle">CIRCUIT</text>
+                <text x="100" y="115" font-family="Arial" font-size="18" fill="#0084D8" text-anchor="middle">BREAKERS</text>
+                <path d="M80,130 L95,150 L110,130 L125,150" stroke="#C0C0C0" stroke-width="4" fill="none"/>
+                <path d="M60,120 L140,120" stroke="#0084D8" stroke-width="3" fill="none"/>
+                <path d="M70,60 L130,60" stroke="#0084D8" stroke-width="3" fill="none"/>
+                <path d="M90,60 L90,120" stroke="#0084D8" stroke-width="3" fill="none"/>
+                <path d="M110,60 L110,120" stroke="#0084D8" stroke-width="3" fill="none"/>
+            </svg>"""
+    except Exception as e:
+        st.warning(f"Could not load SVG: {e}")
+        # Return a minimal SVG as fallback
+        return """<svg width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+            <rect width="150" height="50" fill="#0084D8"/>
+            <text x="75" y="30" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Circuit Breakers</text>
+        </svg>"""
+
+# Initialize required data structures and directories
+config.configure_environment()
+create_tables()
+migrate_data_from_json()
 
 # Initialize session state for data persistence
 if 'authenticated' not in st.session_state:
@@ -28,8 +82,13 @@ if not st.session_state.authenticated:
 else:
     # Main App
     with st.sidebar:
-        logo_svg = load_svg("assets/logo.svg")
-        st.image(logo_svg, width=150)
+        try:
+            # Try to load the logo SVG
+            logo_svg = load_svg("assets/logo.svg")
+            st.image(logo_svg, width=150)
+        except Exception as e:
+            # If loading fails, use a text header instead
+            st.markdown("## ⚡ Circuit Breakers")
         
         st.title("Circuit Breakers")
         st.write(f"Welcome, {st.session_state.user}")
@@ -88,7 +147,7 @@ else:
     # Recent Team Activity
     st.subheader("Recent Team Activity")
     
-    # Sample activity data (would normally come from a database)
+    # Sample activity data
     activity_data = {
         "Date": ["10/25/2023", "10/24/2023", "10/23/2023", "10/22/2023"],
         "Member": ["Alex Johnson", "Maria Garcia", "Jamal Williams", "Sarah Chen"],
