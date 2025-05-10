@@ -1,0 +1,26 @@
+{
+    "admin": {
+        "name": "Admin User",
+        "email": "admin@circuitbreakers.org",
+        "role": "admin",
+        "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        "department": null,
+        "created_at": "2025-05-06T14:05:36.487988"
+    },
+    "moku": {
+        "name": "Mokshith Talasila",
+        "email": "circuitbreaker.nps@gmail.com",
+        "role": "lead",
+        "password": "103a8c45044a6886f712135cac43bf5f4223bf40b83e2df51d24fcc3ee9f69f4",
+        "department": "Management",
+        "created_at": "2025-05-06T14:36:49.233811"
+    },
+    "Jaymann": {
+        "name": "Jaymann Taneja",
+        "email": "circuitbreaker.nps@gmail.com",
+        "role": "member",
+        "password": "6b149f016e2e0017cedc53b8769101163b71bc32e6056727234f4c76dcb9d560",
+        "department": "Media",
+        "created_at": "2025-05-06T23:43:55.096706"
+    }
+}

@@ -1,0 +1,63 @@
+[
+    {
+        "id": "20250507102306",
+        "title": "Team Budget Spreadsheet",
+        "description": "Current season budget tracking with expenses and remaining funds",
+        "category": "Administrative",
+        "uploaded_by": "Admin User",
+        "upload_date": "2025-05-07T10:23:06.334642",
+        "file_type": "XLS",
+        "file_size": "31.2 KB",
+        "file_path": "data/resource_uploads/20250507102306_20250507_102306.xlsx",
+        "tags": [
+            "budget",
+            "finance",
+            "tracking"
+        ]
+    },
+    {
+        "id": "res004",
+        "title": "Suspension Design Drawings",
+        "description": "Technical drawings for front and rear suspension components",
+        "category": "Engineering",
+        "uploaded_by": "Jamal Williams",
+        "upload_date": "2025-04-26T14:09:52.218401",
+        "file_type": "DWG",
+        "file_size": "4.1 MB",
+        "tags": [
+            "suspension",
+            "design",
+            "engineering"
+        ]
+    },
+    {
+        "id": "res002",
+        "title": "Motor Specifications",
+        "description": "Technical specifications for the drive motors including power curves",
+        "category": "Engineering",
+        "uploaded_by": "Alex Johnson",
+        "upload_date": "2025-04-21T14:09:52.218395",
+        "file_type": "PDF",
+        "file_size": "1.7 MB",
+        "tags": [
+            "motors",
+            "specifications",
+            "engineering"
+        ]
+    },
+    {
+        "id": "res001",
+        "title": "Competition Rulebook 2023",
+        "description": "Official competition rulebook with technical specifications and guidelines",
+        "category": "Competition",
+        "uploaded_by": "Admin User",
+        "upload_date": "2025-04-06T14:09:52.218391",
+        "file_type": "PDF",
+        "file_size": "3.2 MB",
+        "tags": [
+            "rules",
+            "competition",
+            "technical"
+        ]
+    }
+]
