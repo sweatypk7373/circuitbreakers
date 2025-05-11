@@ -179,7 +179,7 @@ with tab2:
                             
                             with col1:
                                 st.write(f"**{row['Filename']}**")
-                                st.write(f"Size: {row['Size (KB)']} KB | Uploaded: {row['Upload Date']} | By: {row['Uploaded By']}")
+                                st.write(f"Size: {row['Size (KB)']} KB | Uploaded: {row['Uploaded By']}")
                             
                             with col2:
                                 # Only show preview for certain file types
@@ -206,7 +206,9 @@ with tab2:
                             with col4:
                                 # Delete button
                                 if check_role_access(['admin', 'lead']):
-                                    if st.button("Delete", key=f"delete_{row['ID']}"):
+                                    file_id_str = str(row['ID'])
+                                    unique_key = f"delete_{file_id_str}_{uuid.uuid4()}"
+                                    if st.button("Delete", key=unique_key):
                                         # Get the file_type and file index to delete
                                         file_id_to_delete = row['ID']
                                         file_to_delete = next((file for file in file_metadata[file_type] if file['id'] == file_id_to_delete), None)
