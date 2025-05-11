@@ -179,7 +179,7 @@ with tab2:
                             
                             with col1:
                                 st.write(f"**{row['Filename']}**")
-                                st.write(f"Size: {row['Size (KB)']} KB | Uploaded: {row['Uploaded By']}")
+                                st.write(f"Size: {row['Size (KB)']} KB | Uploaded: {row['Upload Date']} | By: {row['Uploaded By']}")
                             
                             with col2:
                                 # Only show preview for certain file types
@@ -211,18 +211,18 @@ with tab2:
                                     if st.button("Delete", key=unique_key):
                                         # Get the file_type and file index to delete
                                         file_id_to_delete = row['ID']
-                                        file_to_delete = next((file for file in file_metadata[file_type] if file['id'] == file_id_to_delete), None)
-                                        
-                                        if file_to_delete:
+                                        file_to_delete_obj = next((file for file in file_metadata[file_type] if file['id'] == file_id_to_delete), None)
+
+                                        if file_to_delete_obj:
                                             # Remove the file from the filesystem
-                                            if os.path.exists(file_to_delete['file_path']):
-                                                os.remove(file_to_delete['file_path'])
+                                            if os.path.exists(file_to_delete_obj['file_path']):
+                                                os.remove(file_to_delete_obj['file_path'])
                                             
                                             # Remove from metadata
                                             file_metadata[file_type] = [f for f in file_metadata[file_type] if f['id'] != file_id_to_delete]
                                             save_file_metadata(file_metadata)
                                             
-                                            st.success(f"Deleted file: {file_to_delete['original_name']}")
+                                            st.success(f"Deleted file: {file_to_delete_obj['original_name']}")
                                             st.rerun()
                             
                             st.markdown("---")
