@@ -27,7 +27,7 @@ st.title("File Management")
 st.write("Upload, manage, and process files for the Circuit Breakers team")
 
 # Define the uploads directory
-UPLOADS_DIR = "breaker/data/uploads"  # Modified line
+UPLOADS_DIR = "breaker/data/uploads"
 if not os.path.exists(UPLOADS_DIR):
     os.makedirs(UPLOADS_DIR)
 
@@ -43,7 +43,7 @@ for directory in [EXCEL_DIR, DOCS_DIR, IMAGES_DIR, MISC_DIR]:
 
 # Function to load file metadata
 def load_file_metadata():
-    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json") # Modified line
+    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json")
     if os.path.exists(metadata_file):
         try:
             with open(metadata_file, 'r') as f:
@@ -54,7 +54,7 @@ def load_file_metadata():
 
 # Function to save file metadata
 def save_file_metadata(metadata):
-    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json") # Modified line
+    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json")
     with open(metadata_file, 'w') as f:
         json.dump(metadata, f, indent=4)
 
@@ -88,7 +88,8 @@ with tab1:
     uploaded_files = st.file_uploader(
         "Choose files to upload", 
         accept_multiple_files=True,
-        type=None  # Accept all file types
+        type=None,
+        key="file_uploader_tab1"
     )
     
     if uploaded_files:
@@ -97,7 +98,7 @@ with tab1:
         
         success_count = 0
         
-        for idx, uploaded_file in enumerate(uploaded_files): # Added enumerate
+        for idx, uploaded_file in enumerate(uploaded_files):
             try:
                 # Get file type and destination directory
                 file_type, dest_dir = get_file_type_and_dir(uploaded_file.name)
@@ -220,7 +221,6 @@ with tab2:
                             
                             st.markdown("---")
 
-
 with tab3:
     st.header("Excel File Viewer")
     
@@ -245,7 +245,7 @@ with tab3:
         selected_option = st.selectbox(
             "Select an Excel/CSV file to view:",
             options=[""] + excel_options,
-            key="excel_file_selector" # Added a key here
+            key="excel_file_selector"
         )
         
         if selected_option:
@@ -263,7 +263,7 @@ with tab3:
                         sheet_names = excel_file.sheet_names
                         
                         # Allow user to select a sheet
-                        selected_sheet = st.selectbox("Select a sheet:", sheet_names, key=f"sheet_selector_{selected_file['id']}") # Added key
+                        selected_sheet = st.selectbox("Select a sheet:", sheet_names, key=f"sheet_selector_{selected_file['id']}")
                         
                         # Read the selected sheet
                         df = pd.read_excel(file_path, sheet_name=selected_sheet)
@@ -283,7 +283,7 @@ with tab3:
                     st.dataframe(df)
                     
                     # Add some data analysis options
-                    with st.expander("Data Analysis Options"):
+                    with st.expander("Data Analysis Options", key=f"analysis_expander_{selected_file['id']}"):
                         # Show data types
                         st.write("**Data Types:**")
                         st.write(df.dtypes)
@@ -301,7 +301,7 @@ with tab3:
                             data=csv,
                             file_name=f"{os.path.splitext(selected_file['original_name'])[0]}_processed.csv",
                             mime="text/csv",
-                            key=f"download_csv_{selected_file['id']}" # Added key
+                            key=f"download_csv_{selected_file['id']}"
                         )
                 
                 except Exception as e:
@@ -311,4 +311,3 @@ with tab3:
 
 # Footer
 st.caption("Circuit Breakers Team Hub - File Management")
-
