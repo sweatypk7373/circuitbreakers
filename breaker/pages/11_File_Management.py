@@ -224,6 +224,8 @@ with tab2:
                                             
                                             st.success(f"Deleted file: {file_to_delete_obj['original_name']}")
                                             st.rerun()
+                                        else:
+                                            st.error(f"File with ID {file_id_to_delete} not found in metadata.")
                             
                             st.markdown("---")
 
