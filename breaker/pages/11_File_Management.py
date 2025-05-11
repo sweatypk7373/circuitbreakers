@@ -27,7 +27,7 @@ st.title("File Management")
 st.write("Upload, manage, and process files for the Circuit Breakers team")
 
 # Define the uploads directory
-UPLOADS_DIR = "data/uploads"  # Modified line
+UPLOADS_DIR = "breaker/data/uploads"  # Modified line
 if not os.path.exists(UPLOADS_DIR):
     os.makedirs(UPLOADS_DIR)
 
@@ -43,7 +43,7 @@ for directory in [EXCEL_DIR, DOCS_DIR, IMAGES_DIR, MISC_DIR]:
 
 # Function to load file metadata
 def load_file_metadata():
-    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json")
+    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json") # Modified line
     if os.path.exists(metadata_file):
         try:
             with open(metadata_file, 'r') as f:
@@ -54,7 +54,7 @@ def load_file_metadata():
 
 # Function to save file metadata
 def save_file_metadata(metadata):
-    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json")
+    metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json") # Modified line
     with open(metadata_file, 'w') as f:
         json.dump(metadata, f, indent=4)
 
