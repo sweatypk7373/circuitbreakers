@@ -5,6 +5,7 @@ import io
 import sys
 import json
 from datetime import datetime
+import hashlib  # Import hashlib for more robust key generation
 
 # Add the parent directory to the path to import from the app root
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -182,8 +183,10 @@ with tab2:
                             with col2:
                                 # Only show preview for certain file types
                                 if file_type == "Excel/CSV":
-                                    # Make the key unique by including the file ID
-                                    if st.button(f"Preview", key=f"preview_{row['ID']}"):
+                                    # Make the key unique
+                                    file_id_str = str(row['ID'])  # Ensure row['ID'] is a string
+                                    unique_key = f"preview_{file_id_str}_{hashlib.md5(file_id_str.encode()).hexdigest()}"
+                                    if st.button("Preview", key=unique_key):
                                         st.session_state.selected_excel = row['Path']
                                         st.session_state.active_tab = "Excel Viewer"
                                         st.rerun()
