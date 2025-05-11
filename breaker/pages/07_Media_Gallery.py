@@ -43,6 +43,24 @@ if 'selected_media' not in st.session_state:
     st.session_state.selected_media = None
 
 # Load media items
+
+def load_media():
+    data_dir = "breaker/data" # Ensure the metadata file is also in breaker/data
+    media_file = os.path.join(data_dir, "media_items.json")
+    if os.path.exists(media_file):
+        try:
+            with open(media_file, 'r') as f:
+                media_items = json.load(f)
+                # Ensure file paths are correct upon loading (if you stored just filenames)
+                for item in media_items:
+                    if 'file_path' in item and item['file_path'] and not os.path.isabs(item['file_path']):
+                        item['file_path'] = os.path.join(MEDIA_DIR, item['file_path'])
+                return media_items
+        except Exception as e:
+            st.error(f"Error loading media data: {e}")
+            return []
+    return []   
+    
 media_items = load_media()
 
 
