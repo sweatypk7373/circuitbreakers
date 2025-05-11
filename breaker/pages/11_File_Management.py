@@ -131,6 +131,7 @@ with tab1:
                     "id": generate_id(),
                     "original_name": uploaded_file.name,
                     "stored_name": unique_filename,
+                    "stored_name": unique_filename,
                     "file_path": file_path,
                     "file_type": file_type,
                     "size_kb": round(uploaded_file.size / 1024, 2),
@@ -204,11 +205,13 @@ with tab2:
                                 # Create a download button
                                 if os.path.exists(row['Path']):
                                     with open(row['Path'], 'rb') as file:
+                                        # Use a unique key for each download button
+                                        download_key = f"download_{row['ID']}_{uuid.uuid4()}"
                                         st.download_button(
                                             label="Download",
                                             data=file,
                                             file_name=row['Filename'],
-                                            key=f"download_{row['ID']}"
+                                            key=download_key
                                         )
                             
                             with col4:
