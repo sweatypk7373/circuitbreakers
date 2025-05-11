@@ -9,7 +9,7 @@ from datetime import datetime
 os.makedirs("data", exist_ok=True)
 
 # Define user data file path
-USER_DATA_FILE = "data/users.json"
+USER_DATA_FILE = "breaker/data/users.json"
 
 # Hash password function
 def hash_password(password):
