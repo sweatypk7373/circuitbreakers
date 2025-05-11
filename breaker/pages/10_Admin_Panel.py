@@ -33,8 +33,8 @@ st.title("Admin Panel")
 st.write("System administration, user management, and application settings")
 
 # File paths
-USER_DATA_FILE = "data/users.json"
-APP_SETTINGS_FILE = "data/settings.json"
+USER_DATA_FILE = "breaker/data/users.json"
+APP_SETTINGS_FILE = "breaker/data/settings.json"
 
 # Helper functions
 def load_users():
