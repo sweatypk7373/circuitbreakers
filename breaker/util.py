@@ -31,7 +31,7 @@ def check_role_access(required_roles):
 
 # Load a task file
 def load_tasks():
-    task_file = "data/tasks/tasks.json"
+    task_file = "breaker/data/tasks/tasks.json"
     if not os.path.exists(task_file):
         tasks = []
         with open(task_file, 'w') as f:
@@ -43,13 +43,13 @@ def load_tasks():
 
 # Save tasks to file
 def save_tasks(tasks):
-    task_file = "data/tasks/tasks.json"
+    task_file = "breaker/data/tasks/tasks.json"
     with open(task_file, 'w') as f:
         json.dump(tasks, f, indent=4)
 
 # Load build log entries
 def load_logs():
-    log_file = "data/logs/build_logs.json"
+    log_file = "breaker/data/logs/build_logs.json"
     if not os.path.exists(log_file):
         logs = []
         with open(log_file, 'w') as f:
@@ -61,13 +61,13 @@ def load_logs():
 
 # Save build log entries
 def save_logs(logs):
-    log_file = "data/logs/build_logs.json"
+    log_file = "breaker/data/logs/build_logs.json"
     with open(log_file, 'w') as f:
         json.dump(logs, f, indent=4)
 
 # Load resources/documents
 def load_resources():
-    resource_file = "data/resources/resources.json"
+    resource_file = "breaker/data/resources/resources.json"
     if not os.path.exists(resource_file):
         resources = []
         with open(resource_file, 'w') as f:
@@ -79,13 +79,13 @@ def load_resources():
 
 # Save resources/documents
 def save_resources(resources):
-    resource_file = "data/resources/resources.json"
+    resource_file = "breaker/data/resources/resources.json"
     with open(resource_file, 'w') as f:
         json.dump(resources, f, indent=4)
 
 # Load media items
 def load_media():
-    media_file = "data/media/media_items.json"
+    media_file = "breaker/data/media/media_items.json"
     if not os.path.exists(media_file):
         media_items = []
         with open(media_file, 'w') as f:
@@ -97,13 +97,13 @@ def load_media():
 
 # Save media items
 def save_media(media_items):
-    media_file = "data/media/media_items.json"
+    media_file = "breaker/data/media/media_items.json"
     with open(media_file, 'w') as f:
         json.dump(media_items, f, indent=4)
 
 # Load sponsors
 def load_sponsors():
-    sponsor_file = "data/sponsors/sponsors.json"
+    sponsor_file = "breaker/data/sponsors/sponsors.json"
     if not os.path.exists(sponsor_file):
         sponsors = []
         with open(sponsor_file, 'w') as f:
@@ -115,13 +115,13 @@ def load_sponsors():
 
 # Save sponsors
 def save_sponsors(sponsors):
-    sponsor_file = "data/sponsors/sponsors.json"
+    sponsor_file = "breaker/data/sponsors/sponsors.json"
     with open(sponsor_file, 'w') as f:
         json.dump(sponsors, f, indent=4)
 
 # Load events
 def load_events():
-    event_file = "data/events/events.json"
+    event_file = "breaker/data/events/events.json"
     if not os.path.exists(event_file):
         events = []
         with open(event_file, 'w') as f:
@@ -133,13 +133,13 @@ def load_events():
 
 # Save events
 def save_events(events):
-    event_file = "data/events/events.json"
+    event_file = "breaker/data/events/events.json"
     with open(event_file, 'w') as f:
         json.dump(events, f, indent=4)
 
 # Load team members
 def load_team_members():
-    user_data_file = "data/users.json"
+    user_data_file = "breaker/data/users.json"
     if not os.path.exists(user_data_file):
         return []
     
@@ -160,7 +160,7 @@ def load_team_members():
 
 # Load messages
 def load_messages():
-    message_file = "data/messages/messages.json"
+    message_file = "breaker/data/messages/messages.json"
     if not os.path.exists(message_file):
         messages = []
         with open(message_file, 'w') as f:
@@ -172,7 +172,7 @@ def load_messages():
 
 # Save messages
 def save_messages(messages):
-    message_file = "data/messages/messages.json"
+    message_file = "breaker/data/messages/messages.json"
     with open(message_file, 'w') as f:
         json.dump(messages, f, indent=4)
 
