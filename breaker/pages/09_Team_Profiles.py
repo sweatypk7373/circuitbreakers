@@ -56,7 +56,7 @@ if 'view_mode' not in st.session_state:
 
 # Load team members
 def get_user_data_file():
-    data_dir = "data"
+    data_dir = "breaker/data"  # Explicitly set the data directory
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
     return os.path.join(data_dir, "users.json")
