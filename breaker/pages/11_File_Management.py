@@ -50,15 +50,19 @@ def load_file_metadata():
         try:
             with open(metadata_file, 'r') as f:
                 return json.load(f)
-        except:
+        except Exception as e:
+            st.error(f"Error loading metadata: {e}")
             return {}
     return {}
 
 # Function to save file metadata
 def save_file_metadata(metadata):
     metadata_file = os.path.join(UPLOADS_DIR, "file_metadata.json")
-    with open(metadata_file, 'w') as f:
-        json.dump(metadata, f, indent=4)
+    try:
+        with open(metadata_file, 'w') as f:
+            json.dump(metadata, f, indent=4)
+    except Exception as e:
+        st.error(f"Error saving metadata: {e}")
 
 # Function to determine the file type and appropriate directory
 def get_file_type_and_dir(filename):
@@ -119,6 +123,10 @@ with tab1:
                 if file_type not in file_metadata:
                     file_metadata[file_type] = []
                 
+                # Ensure file_metadata[file_type] is a list before appending
+                if not isinstance(file_metadata[file_type], list):
+                    file_metadata[file_type] = []
+
                 file_metadata[file_type].append({
                     "id": generate_id(),
                     "original_name": uploaded_file.name,
@@ -223,6 +231,8 @@ with tab2:
                                             save_file_metadata(file_metadata)
                                             
                                             st.success(f"Deleted file: {file_to_delete_obj['original_name']}")
+                                            
+                                            # Use a key that changes on every deletion
                                             st.rerun()
                                         else:
                                             st.error(f"File with ID {file_id_to_delete} not found in metadata.")
