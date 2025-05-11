@@ -97,7 +97,7 @@ with tab1:
         
         success_count = 0
         
-        for uploaded_file in uploaded_files:
+        for idx, uploaded_file in enumerate(uploaded_files): # Added enumerate
             try:
                 # Get file type and destination directory
                 file_type, dest_dir = get_file_type_and_dir(uploaded_file.name)
@@ -181,6 +181,7 @@ with tab2:
                             with col2:
                                 # Only show preview for certain file types
                                 if file_type == "Excel/CSV":
+                                    # Make the key unique by including the file ID
                                     if st.button(f"Preview", key=f"preview_{row['ID']}"):
                                         st.session_state.selected_excel = row['Path']
                                         st.session_state.active_tab = "Excel Viewer"
@@ -219,6 +220,7 @@ with tab2:
                             
                             st.markdown("---")
 
+
 with tab3:
     st.header("Excel File Viewer")
     
@@ -242,7 +244,8 @@ with tab3:
         
         selected_option = st.selectbox(
             "Select an Excel/CSV file to view:",
-            options=[""] + excel_options
+            options=[""] + excel_options,
+            key="excel_file_selector" # Added a key here
         )
         
         if selected_option:
@@ -260,7 +263,7 @@ with tab3:
                         sheet_names = excel_file.sheet_names
                         
                         # Allow user to select a sheet
-                        selected_sheet = st.selectbox("Select a sheet:", sheet_names)
+                        selected_sheet = st.selectbox("Select a sheet:", sheet_names, key=f"sheet_selector_{selected_file['id']}") # Added key
                         
                         # Read the selected sheet
                         df = pd.read_excel(file_path, sheet_name=selected_sheet)
@@ -297,7 +300,8 @@ with tab3:
                             label="Download as CSV",
                             data=csv,
                             file_name=f"{os.path.splitext(selected_file['original_name'])[0]}_processed.csv",
-                            mime="text/csv"
+                            mime="text/csv",
+                            key=f"download_csv_{selected_file['id']}" # Added key
                         )
                 
                 except Exception as e:
@@ -307,3 +311,4 @@ with tab3:
 
 # Footer
 st.caption("Circuit Breakers Team Hub - File Management")
+
