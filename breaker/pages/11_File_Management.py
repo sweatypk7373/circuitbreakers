@@ -27,7 +27,7 @@ st.title("File Management")
 st.write("Upload, manage, and process files for the Circuit Breakers team")
 
 # Define the uploads directory
-UPLOADS_DIR = "data/uploads"
+UPLOADS_DIR = "breaker/data/uploads"  # Modified line
 if not os.path.exists(UPLOADS_DIR):
     os.makedirs(UPLOADS_DIR)
 
