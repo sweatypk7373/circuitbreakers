@@ -333,9 +333,9 @@ with tab1:
                         with cols[j]:
                             # Get role color
                             role_colors = {
-                                "admin": "#dc3545",  # red
-                                "lead": "#fd7e14",  # orange
-                                "member": "#28a745"  # green
+                                "admin": "#D22B2B",  # red
+                                "lead": "#EC5800",  # orange
+                                "member": "#00A36C"  # green
                             }
                             role_color = role_colors.get(member.get('role', 'member'), "#6c757d")
 
